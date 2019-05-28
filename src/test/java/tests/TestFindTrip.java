@@ -18,4 +18,9 @@ public class TestFindTrip extends TestInit {
 
         assertTrue(tripSearchPage.getSearchTable().isDisplayed());
     }
+
+    @Test
+    public void doThis(){
+
+    }
 }
