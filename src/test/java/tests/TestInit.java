@@ -13,7 +13,11 @@ public class TestInit {
 
     @Before
     public void setUpChrome() {
-        System.setProperty("webdriver.chrome.driver", "src/resources/chromedriver_win.exe");
+        if (System.getProperty("os.name").toLowerCase().contains("win")){
+            System.setProperty("webdriver.chrome.driver", "src/resources/chromedriver_win.exe");
+        }else {
+            System.setProperty("webdriver.chrome.driver", "src/resources/chromedriver_mac");
+        }
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS); //Явное ожидание. Ждет пояаление эл-та
     }
